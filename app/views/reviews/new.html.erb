@@ -1,0 +1,9 @@
+<h1>Add your own Review</h1>
+
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <%= f.input :content, as: :text %>
+  <%= f.input :rating, collection: 0..5 %>
+  <%= f.submit 'Submit your review', class: 'btn btn-secondary' %>
+<% end %>
+<br>
+<%= link_to "See all reviews of #{@restaurant.name}",  restaurant_reviews_path %>
